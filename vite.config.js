@@ -9,10 +9,18 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
-plugins: [
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
+  },
+  plugins: [
     react(),
         tailwindcss(),
     babel({ presets: [reactCompilerPreset()] })

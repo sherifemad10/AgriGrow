@@ -7,7 +7,7 @@ const baseNavigationLinks = [
   { id: 'home', label: 'الرئيسية', href: '#home' },
   { id: 'specialties', label: 'التخصصات', href: '#specialties' },
   { id: 'research', label: 'أحدث الأبحاث', href: '#research' },
-  { id: 'roadmap', label: 'خريطة الطريق 🔒', href: '#roadmap' },
+  { id: 'roadmap', label: 'خريطة الطريق ', href: '#roadmap' },
   { id: 'about', label: 'من نحن', href: '#about' },
 ];
 
@@ -17,7 +17,7 @@ const Navbar = ({ currentPage = 'home', onNavigate }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const navigationLinks = isAdmin
-    ? [...baseNavigationLinks, { id: 'admin', label: 'لوحة التحكم ⚙️', href: '#admin' }]
+    ? [...baseNavigationLinks, { id: 'admin', label: 'لوحة التحكم ', href: '#admin' }]
     : baseNavigationLinks;
 
   const handleLinkClick = (e, link) => {
@@ -87,9 +87,8 @@ const Navbar = ({ currentPage = 'home', onNavigate }) => {
         {/* Navigation Links */}
         <nav
           id="main-navigation"
-          className={`${
-            isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0 lg:visible lg:opacity-100'
-          } absolute inset-x-3 top-[calc(100%+0.5rem)] max-h-[calc(100vh-6rem)] overflow-y-auto rounded-2xl border border-emerald-900/10 bg-[#f8faf5] p-3 shadow-xl transition-all sm:inset-x-8 lg:static lg:flex lg:flex-1 lg:items-center lg:justify-center lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
+          className={`${isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0 lg:visible lg:opacity-100'
+            } absolute inset-x-3 top-[calc(100%+0.5rem)] max-h-[calc(100vh-6rem)] overflow-y-auto rounded-2xl border border-emerald-900/10 bg-[#f8faf5] p-3 shadow-xl transition-all sm:inset-x-8 lg:static lg:flex lg:flex-1 lg:items-center lg:justify-center lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
           aria-label="التنقل الرئيسي"
         >
           <ul className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-1.5">
@@ -107,13 +106,12 @@ const Navbar = ({ currentPage = 'home', onNavigate }) => {
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link)}
-                    className={`block rounded-xl px-4 py-2 text-sm font-semibold transition lg:whitespace-nowrap ${
-                      isActive
+                    className={`block rounded-xl px-4 py-2 text-sm font-semibold transition lg:whitespace-nowrap ${isActive
                         ? 'bg-emerald-700 text-white shadow-sm'
                         : link.id === 'admin'
-                        ? 'bg-amber-100 text-amber-900 hover:bg-amber-200 border border-amber-300 font-bold'
-                        : 'text-slate-700 hover:bg-emerald-700/10 hover:text-emerald-800'
-                    }`}
+                          ? 'bg-amber-100 text-amber-900 hover:bg-amber-200 border border-amber-300 font-bold'
+                          : 'text-slate-700 hover:bg-emerald-700/10 hover:text-emerald-800'
+                      }`}
                   >
                     {link.label}
                   </a>
