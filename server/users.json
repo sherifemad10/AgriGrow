@@ -1,0 +1,18 @@
+[
+  {
+    "id": "admin-1",
+    "name": "د. شريف عماد",
+    "email": "drsherifemad@gmail.com",
+    "password": "adminpassword123",
+    "role": "admin",
+    "createdAt": "2026-09-27T00:00:00.000Z"
+  },
+  {
+    "id": "usr-1790542279324",
+    "name": "sherif",
+    "email": "sherif10business@gmail.com",
+    "password": "SES@sharf10",
+    "role": "user",
+    "createdAt": "2026-09-27T20:51:19.324Z"
+  }
+]
